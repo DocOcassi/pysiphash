@@ -190,6 +190,9 @@ class SipHash_2_4(object):
         n = SipHash_2_4(_zeroes * 2)
         n.v, n.s, n.b = self.v, self.s, self.b
         return n
+    
+def new(secret, s=b''):
+    return SipHash_2_4(secret, s)
 
 
 siphash24 = SipHash_2_4
